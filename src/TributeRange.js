@@ -170,6 +170,13 @@ class TributeRange {
 
         let el = this.getDocument().createElement('div')
         el.innerHTML = html
+ 
+        // angular 1.x compile and digest selected template
+        if (this.tribute.$compile && this.tribute.$scope) {
+            this.tribute.$compile(el)(this.tribute.$scope)
+            this.tribute.$scope.$digest()
+        }
+
         let frag = this.getDocument().createDocumentFragment(),
             node, lastNode
         while ((node = el.firstChild)) {

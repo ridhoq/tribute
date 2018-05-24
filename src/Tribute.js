@@ -21,6 +21,8 @@ class Tribute {
         allowSpaces = false,
         replaceTextSuffix = null,
         positionMenu = true,
+        $compile = null,
+        $scope = null,
     }) {
 
         this.menuSelected = 0
@@ -31,6 +33,8 @@ class Tribute {
         this.allowSpaces = allowSpaces
         this.replaceTextSuffix = replaceTextSuffix
         this.positionMenu = positionMenu
+        this.$scope = $scope
+        this.$compile = $compile
 
         if (values) {
             this.collection = [{
